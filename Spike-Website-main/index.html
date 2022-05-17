@@ -1,0 +1,163 @@
+<script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Spike</title>
+    <meta content="Spike" name="description">
+    <meta content="Spike" name="keywords">
+
+    <!-- Icon -->
+    <link href="assets/img/paw.png" rel="icon">
+
+    <!-- Vendor CSS -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Talk to spike -->
+    <section id="hero">
+        <div class="hero-container">
+            <h1>SPIKE</h1>
+            <div class="container">
+                <h2>
+                    Hi, I am a full speech controlled robot dog and would love to have a little chat. To start a conversation, press the "Hey Spike!"-Button. Get my attention with the wake word "Spike" and I will respond to the sentence that follows it. To stop a conversation,
+                    press the "Bye Spike!"-Button.
+                </h2>
+                <a class="btn btn-primary p-3" id="audio" onclick="startAudiostream()" role="button">Hey Spike!</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Control Spike -->
+    <section id="control">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Control SPIKE</h2>
+                <p>If I'm not responding to your conversation, please try some of these command buttons.
+                </p>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="controlSpike(`lieDown`)" role="button">lie down</a>
+                </div>
+                <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="controlSpike(`sit`)" role="button">sit</a>
+                </div>
+                <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="controlSpike(`turnAround`)" role="button">turn around</a>
+                </div>
+                <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="controlSpike(`move`)" role="button">move</a>
+                </div>
+                <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="controlSpike(`followMe`)" role="button">follow me</a>
+                </div>
+
+                <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="controlSpike(`walk`)" role="button">walk</a>
+                </div>
+                <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="controlSpike(`come`)" role="button">come</a>
+                </div>
+                <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="controlSpike(`run`)" role="button">run</a>
+                </div>
+                <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="controlSpike(`stop`)" role="button">stop</a>
+                </div>
+                <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="controlSpike(`pet`)" role="button">pet</a>
+                </div>
+
+                <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="controlSpike(`paw`)" role="button">paw</a>
+                </div>
+                <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="controlSpike(`makeDogJoy`)" role="button">joy</a>
+                </div>
+                <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="controlSpike(`makeDogAngry`)" role="button">anger</a>
+                </div>
+                <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="controlSpike(`makeDogFear`)" role="button">fear</a>
+                </div>
+                <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="controlSpike(`makeDogSad`)" role="button">sad</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Empathy with aN AutonoMOUs Robot</h2>
+                <p>The connection of semantics and pragmatics in human-robot interaction is explored in the project "Empathy with aN AutonoMOUs Robot" (ENAMOUR). This interdisciplinary project is about giving a mobile robot the ability for multimodal emotional
+                    expression. Most likely it will be a robot dog that understands spoken commands like "sit”, “down" and more. Depending on the way you talk to the robot, it will behave and act authentically emotionally by virtue of its multimodal emotional
+                    expressiveness.
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col text-center">
+                    <img src="assets/img/w.jpg" class="img-fluid" alt="">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col mt-5 text-center">
+                    In dem Projekt "Empathy with aN AutonoMOUs Robot" (ENAMOUR) wird das Zusammenspiel aus Semantik und Pragmatik in der Mensch-Roboter Interaktion erforscht. In dem interdisziplinärem Projekt bauen Sie die Sprachsteuerung. Auf Basis von Open Source Software
+                    entwickeln und integrieren Sie diese auf einem mobilen Roboter. Es wird sich um einen Roboterhund handeln. Parallel zu der Programmierung entwerfen Sie ein Dialogmodell und sammeln Audio/Text Daten mit denen die ASR/NLU Modelle trainiert
+                    und evaluiert werden. Sie werden in einem agilen Entwicklungsteam arbeiten und gemeinsam die Sprachsteuerung realisieren. Das selbstorganisierende und funktionsübergreifende Team wird Anforderungen ermitteln und Lösungen gemeinsam
+                    erarbeiten. Individuelle Berichte geben Einblick in Teillösungen. Zum Abschluss wird die Technik beschrieben und einer breiten Öffentlichkeit präsentiert.
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start">
+        <div class="container d-flex justify-content-center py-3 pt-5">
+            <button type="button" class="btn btn-primary btn-lg btn-floating mx-2 sozial" href="https://www.thi.de/">
+              <i class="bi bi-laptop"></i>
+        </button>
+            <button type="button" class="btn btn-primary btn-lg btn-floating mx-2 sozial" href="">
+              <i class="bi bi-robot"></i>
+        </button>
+            <button type="button" class="btn btn-primary btn-lg btn-floating mx-2 sozial" href="">
+              <i class="bi bi-envelope"></i>
+        </button>
+            <button type="button" class="btn btn-primary btn-lg btn-floating mx-2 sozial" href="">
+          <i class="bi bi-code-slash"></i>
+        </button>
+        </div>
+
+        <div class="text-center text-white p-3">
+            © 2022
+            <a class="text-white" href="https://www.thi.de/">Technische Hochschule Ingolstadt</a>
+        </div>
+    </footer>
+
+
+    <a href="#" class="top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- JS -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

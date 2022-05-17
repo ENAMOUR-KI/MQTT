@@ -1,0 +1,154 @@
+/* General */
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #555555;
+}
+
+a {
+    text-decoration: none;
+    color: #005a9b;
+}
+
+a:hover {
+    color: #005a9b;
+    text-decoration: none;
+}
+
+.btn {
+    background-color: #005a9b;
+    border-color: #005a9b;
+}
+
+
+/* Topbutton */
+
+.top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #005a9b;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    border-color: #005a9b;
+    transition: all 0.4s;
+}
+
+.top i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+}
+
+.top.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* Hero */
+
+#hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    color: black;
+    background-color: white;
+}
+
+#hero .hero-container {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 15px;
+}
+
+#hero h1 {
+    margin: 0 0 30px 0;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 56px;
+    color: #005a9b;
+}
+
+#hero h2 {
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+@media (min-width: 1024px) {
+    #hero {
+        background-attachment: fixed;
+    }
+}
+
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    #hero h2 {
+        line-height: 22px;
+    }
+}
+
+
+/* Sections */
+
+section {
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+.section-title {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    padding-bottom: 0;
+    color: #151515;
+}
+
+.section-title p {
+    margin-bottom: 0;
+    color: #696969;
+}
+
+#control {
+    background-color: #eeeeee;
+}
+
+#about {
+    background-color: #dddddd;
+}
+
+footer {
+    background-color: #cccccc;
+}
+
+.bi {
+    color: #005a9b;
+}
+
+.sozial {
+    background-color: #cccccc;
+    border-color: #cccccc;
+}
