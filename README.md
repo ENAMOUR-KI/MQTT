@@ -1,3 +1,9 @@
+# CHANGE IP
+
+MQTT/Spike-Website-main/assets/js/main.js
+
+
+
 # MQTT
 
 cd script
