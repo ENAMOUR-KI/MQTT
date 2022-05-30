@@ -12,6 +12,7 @@ const client = mqtt.connect(connectUrlMqtt, {
 })
 
 wss.on('connection', ws => {
+console.log("Client connected");
   ws.on('message', message => {
     console.log(`Received message => ${message}`)
     client.publish(audioTopic, message)

@@ -1,7 +1,6 @@
 (function() {
     "use strict"
-
-    /**
+     /**
      * Easy selector helper function
      */
     const select = (el, all = false) => {
@@ -56,8 +55,9 @@ function startAudiostream() {
         document.getElementById("audio").innerHTML = "Bye Spike!"
         console.log("Dummy Audiostream started")
         
-var host = 'ws://127.0.0.1:8765';
-const webSocket = new WebSocket(host);
+var RASPBERRY_IP = '192.168.0.49'
+
+const webSocket = new WebSocket('ws://192.168.0.49:8765');
 webSocket.onopen = event => {
 	navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
 		const recorder = new RecordRTC(stream, {
