@@ -1,0 +1,28 @@
+<script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+<script>
+	
+	/*
+		https://community.rhasspy.org/t/streaming-audio-via-browser-from-tablet-phone-desktop-mic/1878/3
+		https://github.com/muaz-khan/RecordRTC/issues/260
+	*/
+
+var host = 'ws://192.168.0.40:8765';
+const webSocket = new WebSocket(host);
+webSocket.onopen = event => {
+	navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+		const recorder = new RecordRTC(stream, {
+			type: 'audio',
+			mimeType: 'audio/wav',
+			sampleRate: 44100,
+			//desiredSampRate: 22505,
+      recorderType: StereoAudioRecorder,
+      numberOfAudioChannels: 1,
+      bitrate: 16000,
+      timeSlice: 1,
+			ondataavailable: (blob) => {
+				webSocket.send(blob);
+			},
+		}).startRecording();
+	});
+};
+</script>

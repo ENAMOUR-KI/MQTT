@@ -56,7 +56,7 @@ function startAudiostream() {
         document.getElementById("audio").innerHTML = "Bye Spike!"
         console.log("Dummy Audiostream started")
         
-var host = 'ws://192.168.242.131:8765';
+var host = 'ws://127.0.0.1:8765';
 const webSocket = new WebSocket(host);
 webSocket.onopen = event => {
 	navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
