@@ -55,9 +55,14 @@ function startAudiostream() {
         document.getElementById("audio").innerHTML = "Bye Spike!"
         console.log("Dummy Audiostream started")
         
+// IP will be removed in the future
 var RASPBERRY_IP = '192.168.0.49'
+var RASPBERRY_PORT = '8765'
 
-const webSocket = new WebSocket('ws://192.168.0.49:8765');
+var currentHostname = window.location.hostname;
+var host = 'ws://' + currentHostname + ':' + RASPBERRY_PORT; 
+
+const webSocket = new WebSocket(host);
 webSocket.onopen = event => {
 	navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
 		const recorder = new RecordRTC(stream, {
