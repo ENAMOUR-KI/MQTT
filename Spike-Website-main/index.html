@@ -10,7 +10,7 @@
     <meta content="Spike" name="keywords">
 
     <!-- Icon -->
-    <link href="assets/img/paw.png" rel="icon">
+    <link href="assets/img/logo.png" rel="icon">
 
     <!-- Vendor CSS -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -24,13 +24,14 @@
     <!-- Talk to spike -->
     <section id="hero">
         <div class="hero-container">
-            <h1>SPIKE</h1>
             <div class="container">
                 <h2>
-                    Hi, I am a full speech controlled robot dog and would love to have a little chat. To start a conversation, press the "Hey Spike!"-Button. Get my attention with the wake word "Spike" and I will respond to the sentence that follows it. To stop a conversation,
-                    press the "Bye Spike!"-Button.
+                    Hi, human! <br><br> I am Spike, a full speech controlled robot dog and would love to have a little chat with you.<br><br> To start a conversation, press the "Hey Spike"-Button. <br><br> Get my attention with the wake word "Spike" and
+                    I will respond to the sentence that follows it.
+                    <br><br> To stop a conversation, press the "Bye Spike!"-Button.
                 </h2>
-                <a class="btn btn-primary p-3" id="audio" onclick="startAudiostream()" role="button">Hey Spike!</a>
+                <img class="audio-stream-btn" id="audio" src="assets/img/hi.png" onclick="startAudiostream()" role="button" role="button"></img>
+                <!--<a class="btn btn-primary p-3" id="audio" onclick="startAudiostream()" role="button">Hey Spike!</a>-->
             </div>
         </div>
     </section>
@@ -93,6 +94,14 @@
                 <div class="col-4 mt-5">
                     <a class="btn btn-primary" onclick="controlSpike(`makeDogSad`)" role="button">sad</a>
                 </div>
+
+                <div class="col-4 mt-5">
+                </div>
+                <div class="col-4 mt-5 pt-5">
+                    <a class="btn btn-primary" onclick="wakeword()" role="button">spike</a>
+                </div>
+                <div class="col-4 mt-5">
+                </div>
             </div>
         </div>
     </section>
@@ -103,24 +112,24 @@
 
             <div class="section-title">
                 <h2>Empathy with aN AutonoMOUs Robot</h2>
-                <p>The connection of semantics and pragmatics in human-robot interaction is explored in the project "Empathy with aN AutonoMOUs Robot" (ENAMOUR). This interdisciplinary project is about giving a mobile robot the ability for multimodal emotional
-                    expression. Most likely it will be a robot dog that understands spoken commands like "sit”, “down" and more. Depending on the way you talk to the robot, it will behave and act authentically emotionally by virtue of its multimodal emotional
-                    expressiveness.
+
+                <p>Dieses Projekt wurde gesponsort von <a href="https://www.ainin.de/">AININ</a>.</p><br>
+                <p>In dem Projekt "Empathy with aN AutonoMOUs Robot" (ENAMOUR) wird das Zusammenspiel aus Semantik und Pragmatik in der Mensch-Roboter Interaktion erforscht. In dem interdisziplinärem Projekt bauen Sie die Sprachsteuerung. Auf Basis von Open
+                    Source Software entwickeln und integrieren Sie diese auf einem mobilen Roboter. Es wird sich um einen Roboterhund handeln. Parallel zu der Programmierung entwerfen Sie ein Dialogmodell und sammeln Audio/Text Daten mit denen die ASR/NLU
+                    Modelle trainiert und evaluiert werden. Sie werden in einem agilen Entwicklungsteam arbeiten und gemeinsam die Sprachsteuerung realisieren. Das selbstorganisierende und funktionsübergreifende Team wird Anforderungen ermitteln und Lösungen
+                    gemeinsam erarbeiten. Individuelle Berichte geben Einblick in Teillösungen. Zum Abschluss wird die Technik beschrieben und einer breiten Öffentlichkeit präsentiert.
                 </p>
             </div>
 
             <div class="row">
                 <div class="col text-center">
-                    <img src="assets/img/w.jpg" class="img-fluid" alt="">
+                    <img src="assets/img/spike.jpg" class="img-fluid" alt="">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col mt-5 text-center">
-                    In dem Projekt "Empathy with aN AutonoMOUs Robot" (ENAMOUR) wird das Zusammenspiel aus Semantik und Pragmatik in der Mensch-Roboter Interaktion erforscht. In dem interdisziplinärem Projekt bauen Sie die Sprachsteuerung. Auf Basis von Open Source Software
-                    entwickeln und integrieren Sie diese auf einem mobilen Roboter. Es wird sich um einen Roboterhund handeln. Parallel zu der Programmierung entwerfen Sie ein Dialogmodell und sammeln Audio/Text Daten mit denen die ASR/NLU Modelle trainiert
-                    und evaluiert werden. Sie werden in einem agilen Entwicklungsteam arbeiten und gemeinsam die Sprachsteuerung realisieren. Das selbstorganisierende und funktionsübergreifende Team wird Anforderungen ermitteln und Lösungen gemeinsam
-                    erarbeiten. Individuelle Berichte geben Einblick in Teillösungen. Zum Abschluss wird die Technik beschrieben und einer breiten Öffentlichkeit präsentiert.
+
                 </div>
             </div>
         </div>
@@ -143,11 +152,6 @@
             <button type="button" class="btn btn-primary btn-lg btn-floating mx-2 sozial" href="">
           <i class="bi bi-code-slash"></i>
         </button>
-        </div>
-
-        <div class="text-center text-white p-3">
-            © 2022
-            <a class="text-white" href="https://www.thi.de/">Technische Hochschule Ingolstadt</a>
         </div>
     </footer>
 

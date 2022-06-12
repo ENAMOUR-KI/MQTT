@@ -18,6 +18,19 @@ a:hover {
 .btn {
     background-color: #005a9b;
     border-color: #005a9b;
+    color: white;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    /* may require vendor prefixes */
+    display: inline-flex;
+    /* or inline-flex */
+    align-items: center;
+    justify-content: center;
+}
+
+.audio-stream-btn {
+    width: 25%;
 }
 
 
@@ -103,6 +116,9 @@ a:hover {
     #hero h2 {
         line-height: 22px;
     }
+    .audio-stream-btn {
+        width: 40%;
+    }
 }
 
 
@@ -133,15 +149,15 @@ section {
 }
 
 #control {
-    background-color: #eeeeee;
+    background-color: #eff2f4;
 }
 
 #about {
-    background-color: #dddddd;
+    background-color: #dfe5e8;
 }
 
 footer {
-    background-color: #cccccc;
+    background-color: #cfd8dd;
 }
 
 .bi {
@@ -149,6 +165,6 @@ footer {
 }
 
 .sozial {
-    background-color: #cccccc;
-    border-color: #cccccc;
+    background-color: #cfd8dd;
+    border-color: #cfd8dd;
 }

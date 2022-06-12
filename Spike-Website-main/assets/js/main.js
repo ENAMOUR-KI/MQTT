@@ -1,6 +1,6 @@
 (function() {
     "use strict"
-     /**
+    /**
      * Easy selector helper function
      */
     const select = (el, all = false) => {
@@ -50,40 +50,53 @@
     }
 })()
 
+var audiostream = 0
+
 function startAudiostream() {
-    if (document.getElementById("audio").textContent == "Hey Spike!") {
-        document.getElementById("audio").innerHTML = "Bye Spike!"
-        console.log("Dummy Audiostream started")
-        
-// IP will be removed in the future
-var RASPBERRY_IP = '192.168.0.49'
-var RASPBERRY_PORT = '8765'
+    if (audiostream == 0) {
+        audiostream = 1
+        document.getElementById("audio").src = "assets/img/bye.png"
+        console.log("Audiostream started")
 
-var currentHostname = window.location.hostname;
-var host = 'ws://' + currentHostname + ':' + RASPBERRY_PORT; 
+        // IP will be removed in the future
+        var RASPBERRY_IP = '192.168.0.49'
+        var RASPBERRY_PORT = '8765'
 
-const webSocket = new WebSocket(host);
-webSocket.onopen = event => {
-	navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
-		const recorder = new RecordRTC(stream, {
-			type: 'audio',
-			mimeType: 'audio/wav',
-			sampleRate: 44100,
-			//desiredSampRate: 22505,
-      recorderType: StereoAudioRecorder,
-      numberOfAudioChannels: 1,
-      bitrate: 16000,
-      timeSlice: 1,
-			ondataavailable: (blob) => {
-				webSocket.send(blob);
-			},
-		}).startRecording();
-	});
-};
+        var currentHostname = window.location.hostname;
+        var host = 'ws://' + currentHostname + ':' + RASPBERRY_PORT;
+
+        const webSocket = new WebSocket(host);
+        webSocket.onopen = event => {
+            navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+                const recorder = new RecordRTC(stream, {
+                    type: 'audio',
+                    mimeType: 'audio/wav',
+                    sampleRate: 44100,
+                    //desiredSampRate: 22505,
+                    recorderType: StereoAudioRecorder,
+                    numberOfAudioChannels: 1,
+                    bitrate: 16000,
+                    timeSlice: 1,
+                    ondataavailable: (blob) => {
+                        webSocket.send(blob);
+                    },
+                }).startRecording();
+            });
+        };
     } else {
-        document.getElementById("audio").innerHTML = "Hey Spike!"
-        console.log("Dummy Audiostream stopped")
+        audiostream = 0
+        document.getElementById("audio").src = "assets/img/hi.png"
+        console.log("Audiostream ended")
     }
+}
+
+function wakeword() {
+    let xhr = new XMLHttpRequest()
+    xhr.open("POST", "http://<ip>/api/listen-for-command")
+
+    xhr.setRequestHeader("Access-Control-Allow-Origin", "*")
+
+    xhr.onload = () => console.log(xhr.responseText)
 }
 
 function controlSpike(command) {
