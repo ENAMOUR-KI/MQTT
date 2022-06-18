@@ -92,7 +92,7 @@ function startAudiostream() {
 
 function wakeword() {
     let xhr = new XMLHttpRequest()
-    xhr.open("POST", "http://<ip>/api/listen-for-command")
+    xhr.open("POST", "http://" + window.location.hostnam + ":12101/api/listen-for-command")
 
     xhr.setRequestHeader("Access-Control-Allow-Origin", "*")
 

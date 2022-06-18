@@ -96,11 +96,19 @@
                 </div>
 
                 <div class="col-4 mt-5">
-                </div>
-                <div class="col-4 mt-5 pt-5">
-                    <a class="btn btn-primary" onclick="wakeword()" role="button">spike</a>
+                    <a class="btn btn-primary" onclick="controlSpike(`makeDogAffection`)" role="button">affection</a>
                 </div>
                 <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="controlSpike(`disgust`)" role="button">disgust</a>
+                </div>
+                <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="controlSpike(`boredom`)" role="button">boredom</a>
+                </div>
+                <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="controlSpike(`neutral`)" role="neutral">neutral</a>
+                </div>
+                <div class="col-4 mt-5">
+                    <a class="btn btn-primary" onclick="wakeword()" role="button">spike</a>
                 </div>
             </div>
         </div>
