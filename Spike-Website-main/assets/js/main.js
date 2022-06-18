@@ -92,11 +92,12 @@ function startAudiostream() {
 
 function wakeword() {
     let xhr = new XMLHttpRequest()
-    xhr.open("POST", "http://" + window.location.hostnam + ":12101/api/listen-for-command")
+    xhr.open("POST", "http://" + window.location.hostname + ":12101/api/listen-for-command")
 
-    xhr.setRequestHeader("Access-Control-Allow-Origin", "*")
+    xhr.setRequestHeader("Content-Lenght", "0")
 
     xhr.onload = () => console.log(xhr.responseText)
+    xhr.send()
 }
 
 function controlSpike(command) {
